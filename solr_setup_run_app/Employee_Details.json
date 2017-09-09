@@ -1,0 +1,26 @@
+[
+	    {
+            "empId": "SHI00001234",
+            "name": "Tom",
+            "designation": "Technical Associate",
+            "salary": "1000",
+            "department": "Member Technology",
+            "joining date": "09-09-2017"
+           },
+         {
+            "empId": "SHI00001235",
+            "name": "Jerry",
+            "designation": "Technical Trainee",
+            "salary": "300",
+            "department": "Member Technology",
+            "joining date": "09-10-2017"
+           },
+          {
+            "empId": "SHI000012,33",
+            "name": "Spike",
+            "designation": "Business Associate",
+            "salary": "3000",
+            "department": "Sales & Services",
+            "joining date": "09-09-2015"
+           }
+]

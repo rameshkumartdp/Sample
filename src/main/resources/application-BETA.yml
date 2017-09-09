@@ -1,0 +1,2 @@
+service:
+  zkEnsembleDestination : solrx455p.stag.ch4.s.com:2181

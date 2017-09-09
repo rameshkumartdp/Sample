@@ -1,0 +1,43 @@
+server:
+  port: 8080
+  context-path: /${spring.application.name}
+
+spring:
+  application:
+    name: sample
+  profiles:
+    active: BETA
+  output:
+    ansi:
+      enabled: ALWAYS
+  jackson:
+    serialization-inclusion : non_null
+  cloud:
+    config:
+      allow-override: true
+      override-none: false
+      fail-fast: true
+      override-system-properties: false
+
+service:
+  serviceGroup: MYGROUP
+  enableSwagger: true
+  enableMetrics: true
+  enableJsonP: true
+  enableGit: true
+  cacheTtl: 14400
+  queryTimeAllowed: 1200
+  groupLimitValue: 1000
+  solrQueryTimeout: 1000
+
+hystrix:
+   command.solrCommandKey.execution.isolation.thread.timeoutInMilliseconds: 2000
+   command.solrCommandKey.circuitBreaker.requestVolumeThreshold: 4
+   command.solrCommandKey.circuitBreaker.sleepWindowInMilliseconds: 60000
+   command.solrCommandKey.metrics.rollingStats.timeInMilliseconds: 180000
+   threadpool.solrThreadPoolKey.coreSize: 30
+   threadpool.solrThreadPoolKey.metrics.rollingStats.timeInMilliseconds: 180000
+
+logging:
+  level:
+    ROOT: INFO
