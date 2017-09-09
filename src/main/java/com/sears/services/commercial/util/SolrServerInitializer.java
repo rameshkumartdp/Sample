@@ -33,7 +33,7 @@ public class SolrServerInitializer {
         cloudSolrClient.setZkConnectTimeout(zkTimeoutDestination);
         this.solrClient = cloudSolrClient;*/
 
-        SolrClient solrClient = new HttpSolrClient("http://localhost:8580/solr/collection1");
+        SolrClient solrClient = new HttpSolrClient("http://localhost:8983/solr/collection1");
 
         this.solrClient = solrClient;
         return solrClient;
