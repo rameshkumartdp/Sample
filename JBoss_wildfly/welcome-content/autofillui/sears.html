@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="us">
+      <head>
+            <meta charset="utf-8">
+            <title>Autofill</title>
+            <link href="css/autofillsears.css" rel="stylesheet">
+            <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css">
+      </head>
+      <body id="search-page">
+            <div id="sitesradio">
+                  <input type="hidden" id="r1" name="site" >
+            </div>
+            <br>
+            <form id="srchFrm" action="/search" name="keywordForm">
+                  <b>Enter Keyword</b> &nbsp;&nbsp;&nbsp;
+                  <input type="text" id="keyword" name="keywords" style="font-size:15px; font-family: Open Sans; padding: 5px 0 7px 16px; line-height: 18px; width:250px" onkeyup="copy()" >
+                  <br><br><br>
+            
+                  
+            </form>
+            <br><br>
+
+            <script>
+                function copy() {
+                    $('#keywords').on('keypress keyup keydown', function (event) {
+                        var press = jQuery.Event(event.type);
+                        var code = event.keyCode || event.which;
+                        press.which = code;
+                        $('#keyword').val(this.value);
+                        $('#keyword').trigger(event.type, {'event': press});
+                    });
+                }
+            </script>
+
+            <script src="//code.jquery.com/jquery-1.8.1.js"></script>
+            <script src="scripts/stringfunctions.js"></script>
+            <script src="scripts/autofillui.js"></script>
+       
+      </body>
+</html>
