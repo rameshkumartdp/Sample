@@ -3,31 +3,27 @@ package com.sears.services.commercial.bl.processor;
 
 import com.sears.services.commercial.api.request.ServiceRequest;
 import com.sears.services.commercial.api.response.ServiceResponse;
-import com.sears.services.commercial.config.GlobalConstants;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.response.QueryResponse;
-import org.apache.solr.client.solrj.response.SuggesterResponse;
 
 import javax.inject.Named;
 
-@SuppressWarnings("unused")
-@Named("afRequestHandlerDelegate")
-public class AFRequestHandlerDelegate extends BaseDelegate {
-    private static Logger logger = Logger.getLogger(AFRequestHandlerDelegate.class.getName());
+@Named("fieldsDelegate")
+public class FieldsDelegate extends BaseDelegate {
+    private static Logger logger = Logger.getLogger(FieldsDelegate.class.getName());
 
     @Override
     public SolrQuery preProcessQuery(SolrQuery solrQuery, ServiceRequest serviceRequest) {
-        solrQuery.setRequestHandler(GlobalConstants.AF_HANDLER);
+        solrQuery.set("fl","name");
+            logger.info("Set field");
         return solrQuery;
     }
 
     @Override
     public ServiceResponse postProcessResult(ServiceRequest serviceRequest, QueryResponse queryResponse, ServiceResponse serviceResponse) {
-        SuggesterResponse suggesterResponse = queryResponse.getSuggesterResponse();
-        if (suggesterResponse != null) {
-            serviceResponse.setSuggestions(suggesterResponse.getSuggestions());
-        }
         return serviceResponse;
     }
 }
+

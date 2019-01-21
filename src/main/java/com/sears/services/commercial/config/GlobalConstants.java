@@ -3,14 +3,14 @@ package com.sears.services.commercial.config;
 import org.springframework.beans.factory.annotation.Value;
 
 import java.util.Arrays;
-import java.util.List;
+        import java.util.List;
 
 public class GlobalConstants {
 
     public static final String REQUEST = "requests";
     public static final String ID = "id";
     public static final String SEARCH_HANDLER = "search";
-    public static final String AF_HANDLER = "/suggest";
+    public static final String AF_HANDLER = "select";
     public static final String ASC = "asc";
     public static List<String> KNOWN_PARAMETERS;
 

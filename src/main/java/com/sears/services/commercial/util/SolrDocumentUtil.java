@@ -31,4 +31,8 @@ public class SolrDocumentUtil {
     public static String getId(SolrDocument solrDocument) {
         return getFieldValue(solrDocument, GlobalConstants.ID);
     }
+
+    public static String getKeyword(SolrDocument solrDocument) {
+        return getFieldValue(solrDocument, "name");
+    }
 }

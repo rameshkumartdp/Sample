@@ -19,11 +19,23 @@ public class DelegateInitializer {
     @Named("queryTermDelegate")
     private Delegate queryTermDelegate;
     @Inject
+    @Named("afQueryTermDelegate")
+    private Delegate afQueryTermDelegate;
+    @Inject
+    @Named("fieldsDelegate")
+    private Delegate fieldsDelegate;
+    @Inject
     @Named("requestHandlerDelegate")
     private Delegate requestHandlerDelegate;
     @Inject
+    @Named("afRequestHandlerDelegate")
+    private Delegate afRequestHandlerDelegate;
+    @Inject
     @Named("productsDelegate")
     private Delegate productsDelegate;
+    @Inject
+    @Named("afProductsDelegate")
+    private Delegate afProductsDelegate;
     @Inject
     @Named("timeAllowedDelegate")
     private Delegate timeAllowedDelegate;
@@ -51,9 +63,6 @@ public class DelegateInitializer {
     @Inject
     @Named("groupDelegate")
     private Delegate groupDelegate;
-    @Inject
-    @Named("afDelegate")
-    private Delegate afDelegate;
 
 
     public Map<String, List<Delegate>> buildDelegateMapList(ServiceRequest serviceRequest) {
@@ -84,8 +93,10 @@ public class DelegateInitializer {
 
     public Map<String, List<Delegate>> buildAFDelegateMapList(ServiceRequest serviceRequest) {
         List<Delegate> mainDelegateList = new ArrayList<>();
-        mainDelegateList.add(queryTermDelegate);
-        mainDelegateList.add(afDelegate);
+        mainDelegateList.add(afQueryTermDelegate);
+        mainDelegateList.add(afRequestHandlerDelegate);
+        mainDelegateList.add(fieldsDelegate);
+        mainDelegateList.add(afProductsDelegate);
         Map<String, List<Delegate>> delegateMapList = new HashMap<>();
 
         if(serviceRequest.isDebug()) {

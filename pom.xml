@@ -193,17 +193,7 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>com.sears.search.common</groupId>
-            <artifactId>common-helper</artifactId>
-            <version>3.0.5</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>*</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
+
         <dependency>
             <groupId>com.google.code.simple-spring-memcached</groupId>
             <artifactId>spring-cache</artifactId>
@@ -213,6 +203,12 @@
             <groupId>com.google.code.simple-spring-memcached</groupId>
             <artifactId>spymemcached-provider</artifactId>
             <version>3.6.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.solr</groupId>
+            <artifactId>solr-solrj</artifactId>
+            <version>6.1.0</version>
         </dependency>
 
         <dependency>

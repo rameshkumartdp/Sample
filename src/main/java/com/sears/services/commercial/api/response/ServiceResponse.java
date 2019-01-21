@@ -1,6 +1,7 @@
 package com.sears.services.commercial.api.response;
 
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.sears.search.service.api.response.FacetGroup;
 import com.sears.search.service.api.response.ResponseGroup;
 import org.apache.solr.client.solrj.response.Suggestion;
@@ -9,6 +10,7 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ServiceResponse implements Serializable {
 
     private List<Map<String, String>> products;
@@ -17,6 +19,7 @@ public class ServiceResponse implements Serializable {
     private long numFound;
     private List<FacetGroup> facetGroups;
     private List<ResponseGroup> responseGroups;
+    private List<Item> items;
 
     public List<Map<String, String>> getProducts() {
         return products;
@@ -64,6 +67,14 @@ public class ServiceResponse implements Serializable {
 
     public void setSuggestions(Map<String, List<Suggestion>> suggestions) {
         this.suggestions = suggestions;
+    }
+
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Item> items) {
+        this.items = items;
     }
 
     @Override
