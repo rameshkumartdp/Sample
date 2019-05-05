@@ -4,12 +4,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.oracle.search</groupId>
-    <artifactId>spellcheck</artifactId>
+    <groupId>com.aktway.search</groupId>
+    <artifactId>core-service</artifactId>
     <packaging>jar</packaging>
 
     <repositories>
-
 
     </repositories>
 
@@ -165,7 +164,7 @@
     </dependencies>
 
     <build>
-        <finalName>spellcheck</finalName>
+        <finalName>core-service</finalName>
         <resources>
             <resource>
                 <directory>${project.basedir}/src/main/resources</directory>
