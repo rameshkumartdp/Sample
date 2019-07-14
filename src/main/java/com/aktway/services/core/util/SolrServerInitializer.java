@@ -31,8 +31,8 @@ public class SolrServerInitializer {
         cloudSolrClient.setZkConnectTimeout(zkTimeoutDestination);
         this.solrClient = cloudSolrClient;*/
 
-        SolrClient solrClient = new HttpSolrClient("http://ec2-18-222-165-251.us-east-2.compute.amazonaws.com:8983/solr/activity");
-        //SolrClient solrClient = new HttpSolrClient("http://localhost:8983/solr/collection2");
+        //SolrClient solrClient = new HttpSolrClient("http://ec2-18-222-165-251.us-east-2.compute.amazonaws.com:8983/solr/activity");
+        SolrClient solrClient = new HttpSolrClient("http://localhost:8983/solr/activity");
 
         this.solrClient = solrClient;
         return solrClient;
