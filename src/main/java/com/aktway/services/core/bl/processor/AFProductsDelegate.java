@@ -11,7 +11,9 @@ import org.apache.solr.common.SolrDocument;
 
 import javax.inject.Named;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 @SuppressWarnings("unused")
 @Named("afProductsDelegate")
@@ -23,9 +25,9 @@ public class AFProductsDelegate extends BaseDelegate {
 
     @Override
     public ServiceResponse postProcessResult(ServiceRequest serviceRequest, QueryResponse queryResponse, ServiceResponse serviceResponse) {
-        List<Item> items = new ArrayList<>();
+        Set<Item> items = new LinkedHashSet<>();
         for (SolrDocument solrDocument : queryResponse.getResults()) {
-            String keyword = SolrDocumentUtil.getKeyword(solrDocument);
+            String keyword = SolrDocumentUtil.getKeyword(solrDocument).toLowerCase();
             keyword = keyword.substring(1, keyword.length()-1);
             Item item = new Item();
             item.setK(keyword);

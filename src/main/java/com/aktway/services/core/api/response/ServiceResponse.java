@@ -9,6 +9,7 @@ import org.apache.solr.client.solrj.response.Suggestion;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ServiceResponse implements Serializable {
@@ -19,7 +20,7 @@ public class ServiceResponse implements Serializable {
     private long numFound;
     private List<FacetGroup> facetGroups;
     private List<ResponseGroup> responseGroups;
-    private List<Item> items;
+    private Set<Item> items;
 
     public List<Map<String, String>> getProducts() {
         return products;
@@ -69,11 +70,11 @@ public class ServiceResponse implements Serializable {
         this.suggestions = suggestions;
     }
 
-    public List<Item> getItems() {
+    public Set<Item> getItems() {
         return items;
     }
 
-    public void setItems(List<Item> items) {
+    public void setItems(Set<Item> items) {
         this.items = items;
     }
 
