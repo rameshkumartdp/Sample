@@ -35,6 +35,7 @@ public class AFProductsDelegate extends BaseDelegate {
         }
         if (items.size() > 0) {
             serviceResponse.setItems(items);
+            serviceResponse.setNumFound(items.size());
         }
         return serviceResponse;
     }
