@@ -29,8 +29,12 @@ public class AFProductsDelegate extends BaseDelegate {
         for (SolrDocument solrDocument : queryResponse.getResults()) {
             String keyword = SolrDocumentUtil.getKeyword(solrDocument).toLowerCase();
             keyword = keyword.substring(1, keyword.length()-1);
+            String id = SolrDocumentUtil.getId(solrDocument).toLowerCase();
+            String category = SolrDocumentUtil.getCategory(solrDocument).toLowerCase();
             Item item = new Item();
+            item.setId(id);
             item.setK(keyword);
+            item.setCategory(category);
             items.add(item);
         }
         if (items.size() > 0) {

@@ -15,7 +15,7 @@ public class FieldsDelegate extends BaseDelegate {
 
     @Override
     public SolrQuery preProcessQuery(SolrQuery solrQuery, ServiceRequest serviceRequest) {
-        solrQuery.set("fl","name");
+        solrQuery.set("fl","id, name, category");
             logger.info("Set field");
         return solrQuery;
     }

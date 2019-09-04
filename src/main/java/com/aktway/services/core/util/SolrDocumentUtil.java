@@ -35,4 +35,8 @@ public class SolrDocumentUtil {
     public static String getKeyword(SolrDocument solrDocument) {
         return getFieldValue(solrDocument, "name");
     }
+
+    public static String getCategory(SolrDocument solrDocument) {
+        return getFieldValue(solrDocument, "category");
+    }
 }

@@ -7,9 +7,10 @@ import java.util.List;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Item implements Serializable {
-    private String k;
+
     private String id;
-    private String pc;
+    private String k;
+    private String category;
     private List<String> vt;
     private List<Integer> sc;
     //private Flags flags;
@@ -31,12 +32,12 @@ public class Item implements Serializable {
         this.vt = vt;
     }
 
-    public String getPc() {
-        return pc;
+    public String getCategory() {
+        return category;
     }
 
-    public void setPc(String pc) {
-        this.pc = pc;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public List<Integer> getSc() {
@@ -82,9 +83,9 @@ public class Item implements Serializable {
     @Override
     public String toString() {
         return "Item{" +
-                "k='" + k + '\'' +
                 ", id='" + id + '\'' +
-                ", pc='" + pc + '\'' +
+                "k='" + k + '\'' +
+                ", category='" + category + '\'' +
                 ", vt=" + vt +
                 ", sc=" + sc +
                 ", se=" + se +

@@ -32,7 +32,6 @@ public class QueryServiceImpl implements QueryService {
     @Inject
     private QueryCommand queryCommand;
 
-    @Cacheable(cacheNames = "default", key = "#serviceRequest.cacheKey", condition = "#serviceRequest.from != T(com.sears.search.service.api.response.From).INDEX", unless = "T(com.aktway.services.core.util.MiscUtil).isValidResponse(#result) == false")
     public ServiceResponse query(ServiceRequest serviceRequest) throws Exception {
         long startTime = System.currentTimeMillis();
         logger.info(serviceRequest);
@@ -44,7 +43,6 @@ public class QueryServiceImpl implements QueryService {
     }
 
     @Override
-    @Cacheable(cacheNames = "default", key = "#serviceRequest.cacheKey", condition = "#serviceRequest.from != T(com.sears.search.service.api.response.From).INDEX", unless = "T(com.aktway.services.core.util.MiscUtil).isValidResponse(#result) == false")
     public ServiceResponse queryAF(ServiceRequest serviceRequest) throws Exception {
         long startTime = System.currentTimeMillis();
         logger.info(serviceRequest);

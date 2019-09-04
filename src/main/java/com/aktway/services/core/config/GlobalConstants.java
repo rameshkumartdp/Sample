@@ -74,7 +74,6 @@ public class GlobalConstants {
     public static final String SLASH = "/";
     public static final String ENABLE_SWAGGER = "enableSwagger";
     public static final String ENABLE_DISCOVERY = "enableDiscovery";
-    public static final String ENABLE_SEARS_GRAPHITE_REPORTER = "enableSearsGraphiteReporter";
 
     public static String APPLICATION_NAME;
     static {
