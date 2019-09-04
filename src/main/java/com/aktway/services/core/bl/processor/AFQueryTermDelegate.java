@@ -15,7 +15,7 @@ public class AFQueryTermDelegate extends BaseDelegate {
 
     @Override
     public SolrQuery preProcessQuery(SolrQuery solrQuery, ServiceRequest serviceRequest) {
-        solrQuery.setQuery("*"+serviceRequest.getQ()+"*");
+        solrQuery.setQuery("name:*"+serviceRequest.getQ()+"*");
         logger.info("Set Query");
         return solrQuery;
     }
